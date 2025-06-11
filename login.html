@@ -4,12 +4,19 @@
 <title>Login</title>
 </head>
 <body>
+    <div style="display: flex; justify-content: center; align-items: center;">
     <form method="POST" action="{{ url_for('login') }}">
+        <label for="welcome" style="color:rgb(11, 8, 202);">Welcome to my app! Please login.</label><br><br>
         <label for="username">Username:</label><br>
         <input type="text" id="username" name="username" required><br>
         <label for="pwd">Password:</label><br>
         <input type="password" id="password" name="password" required><br>
-        <input type="submit" value="Submit">
+        <input type="submit" value="Submit"><br><br>
+        <label for="register">Register here:</label><br>
+        <a href="{{ url_for('register') }}">
+        <button type="button">Register</button>
+        </a>
     </form>
+    </div>
 </body>
 </html>

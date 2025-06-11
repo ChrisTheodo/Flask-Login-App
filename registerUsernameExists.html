@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Register</title>
+</head>
+<body>
+    <div style="display: flex; justify-content: center; align-items: center;">
+    <form method="POST" action="{{ url_for('register') }}">
+        <label for="register"style="color:rgb(11, 8, 202);">Register:</label><br><br>
+        <label for="username">Enter a username:</label><br>
+        <input type="text" id="username" name="username" required><br>
+
+        
+        <legend>Please select a password:</legend>
+
+        <input type="password" placeholder="Password" id="password" name="password" required><br>
+        <input type="password" placeholder="Confirm Password" id="confirm_password" required>
+
+        <button type="submit" class="pure-button pure-button-primary">Confirm</button><br><br>
+        <p style="color:red;">Username already exists!</p>
+        
+        <label for="register">Login here:</label><br>
+        <a href="{{ url_for('login') }}">
+        <button type="button">Login</button> 
+        </a>
+    
+
+    </div>
+    <script>
+    var password = document.getElementById("password"),
+        confirm_password = document.getElementById("confirm_password");
+
+    function validatePassword() {
+      if (password.value !== confirm_password.value) {
+        confirm_password.setCustomValidity("Passwords Don't Match");
+      } else {
+        confirm_password.setCustomValidity('');
+      }
+    }
+
+    password.onchange = validatePassword;
+    confirm_password.onkeyup = validatePassword;
+  </script>
+</body>
+</html>

@@ -4,6 +4,7 @@
 <title>Login</title>
 </head>
 <body>
+    <div style="display: flex; justify-content: center; align-items: center;">
     <form method="POST" action="{{ url_for('login') }}">
         <label for="username">Username:</label><br>
         <input type="text" id="username" name="username" required><br>
@@ -11,6 +12,11 @@
         <input type="password" id="password" name="password" required><br>
         <input type="submit" value="Submit">
         <p style="color:red;">Username does not exist! Please register!</p>
+        <label for="register">Register here:</label><br>
+        <a href="{{ url_for('register') }}">
+        <button type="button">Register</button> 
+        </a>
     </form>
+    </div>
 </body>
 </html>
